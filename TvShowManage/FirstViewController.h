@@ -10,6 +10,7 @@
 
 @interface FirstViewController : UIViewController
 
+@property (strong,nonatomic)NSManagedObjectContext *context;
 
 @end
 

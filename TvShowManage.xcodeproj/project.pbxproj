@@ -16,6 +16,10 @@
 		A2BF79241CAA93D60008711F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2BF79221CAA93D60008711F /* LaunchScreen.storyboard */; };
 		A2BF792D1CAA9E190008711F /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BF792C1CAA9E190008711F /* AddViewController.m */; };
 		A2BF792F1CAAA3630008711F /* DataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2BF792E1CAAA3630008711F /* DataList.plist */; };
+		A2C808051CAAC1780012353A /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2C808041CAAC1780012353A /* CoreData.framework */; };
+		A2C8080C1CAAC2860012353A /* TvShowManage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2C8080A1CAAC2860012353A /* TvShowManage.xcdatamodeld */; };
+		A2C808451CAAC84A0012353A /* Entity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C808421CAAC84A0012353A /* Entity+CoreDataProperties.m */; };
+		A2C808461CAAC84A0012353A /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C808441CAAC84A0012353A /* Entity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,12 @@
 		A2BF792B1CAA9E190008711F /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
 		A2BF792C1CAA9E190008711F /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
 		A2BF792E1CAAA3630008711F /* DataList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DataList.plist; sourceTree = "<group>"; };
+		A2C808041CAAC1780012353A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A2C8080B1CAAC2860012353A /* TvShowManage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TvShowManage.xcdatamodel; sourceTree = "<group>"; };
+		A2C808411CAAC84A0012353A /* Entity+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Entity+CoreDataProperties.h"; sourceTree = "<group>"; };
+		A2C808421CAAC84A0012353A /* Entity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Entity+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A2C808431CAAC84A0012353A /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		A2C808441CAAC84A0012353A /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C808051CAAC1780012353A /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +63,7 @@
 			children = (
 				A2BF79101CAA93D50008711F /* TvShowManage */,
 				A2BF790F1CAA93D50008711F /* Products */,
+				A2C808061CAAC17D0012353A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +92,11 @@
 				A2BF792B1CAA9E190008711F /* AddViewController.h */,
 				A2BF792C1CAA9E190008711F /* AddViewController.m */,
 				A2BF792E1CAAA3630008711F /* DataList.plist */,
+				A2C8080A1CAAC2860012353A /* TvShowManage.xcdatamodeld */,
+				A2C808411CAAC84A0012353A /* Entity+CoreDataProperties.h */,
+				A2C808421CAAC84A0012353A /* Entity+CoreDataProperties.m */,
+				A2C808431CAAC84A0012353A /* Entity.h */,
+				A2C808441CAAC84A0012353A /* Entity.m */,
 			);
 			path = TvShowManage;
 			sourceTree = "<group>";
@@ -90,6 +107,14 @@
 				A2BF79121CAA93D50008711F /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A2C808061CAAC17D0012353A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2C808041CAAC1780012353A /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,11 +189,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2C808461CAAC84A0012353A /* Entity.m in Sources */,
 				A2BF792D1CAA9E190008711F /* AddViewController.m in Sources */,
 				A2BF791C1CAA93D60008711F /* SecondViewController.m in Sources */,
 				A2BF79161CAA93D50008711F /* AppDelegate.m in Sources */,
+				A2C8080C1CAAC2860012353A /* TvShowManage.xcdatamodeld in Sources */,
 				A2BF79191CAA93D60008711F /* FirstViewController.m in Sources */,
 				A2BF79131CAA93D50008711F /* main.m in Sources */,
+				A2C808451CAAC84A0012353A /* Entity+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +308,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TvShowManage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = formal.TvShowManage;
@@ -291,6 +320,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TvShowManage/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = formal.TvShowManage;
@@ -317,8 +347,22 @@
 				A2BF792A1CAA93D60008711F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A2C8080A1CAAC2860012353A /* TvShowManage.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A2C8080B1CAAC2860012353A /* TvShowManage.xcdatamodel */,
+			);
+			currentVersion = A2C8080B1CAAC2860012353A /* TvShowManage.xcdatamodel */;
+			path = TvShowManage.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A2BF79061CAA93D50008711F /* Project object */;
 }
