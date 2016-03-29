@@ -14,6 +14,8 @@
 		A2BF791F1CAA93D60008711F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2BF791D1CAA93D60008711F /* Main.storyboard */; };
 		A2BF79211CAA93D60008711F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2BF79201CAA93D60008711F /* Assets.xcassets */; };
 		A2BF79241CAA93D60008711F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2BF79221CAA93D60008711F /* LaunchScreen.storyboard */; };
+		A2BF792D1CAA9E190008711F /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BF792C1CAA9E190008711F /* AddViewController.m */; };
+		A2BF792F1CAAA3630008711F /* DataList.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2BF792E1CAAA3630008711F /* DataList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,9 @@
 		A2BF79201CAA93D60008711F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2BF79231CAA93D60008711F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2BF79251CAA93D60008711F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2BF792B1CAA9E190008711F /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		A2BF792C1CAA9E190008711F /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		A2BF792E1CAAA3630008711F /* DataList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DataList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,9 @@
 				A2BF79221CAA93D60008711F /* LaunchScreen.storyboard */,
 				A2BF79251CAA93D60008711F /* Info.plist */,
 				A2BF79111CAA93D50008711F /* Supporting Files */,
+				A2BF792B1CAA9E190008711F /* AddViewController.h */,
+				A2BF792C1CAA9E190008711F /* AddViewController.m */,
+				A2BF792E1CAAA3630008711F /* DataList.plist */,
 			);
 			path = TvShowManage;
 			sourceTree = "<group>";
@@ -144,6 +152,7 @@
 			files = (
 				A2BF79241CAA93D60008711F /* LaunchScreen.storyboard in Resources */,
 				A2BF79211CAA93D60008711F /* Assets.xcassets in Resources */,
+				A2BF792F1CAAA3630008711F /* DataList.plist in Resources */,
 				A2BF791F1CAA93D60008711F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -155,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2BF792D1CAA9E190008711F /* AddViewController.m in Sources */,
 				A2BF791C1CAA93D60008711F /* SecondViewController.m in Sources */,
 				A2BF79161CAA93D50008711F /* AppDelegate.m in Sources */,
 				A2BF79191CAA93D60008711F /* FirstViewController.m in Sources */,
