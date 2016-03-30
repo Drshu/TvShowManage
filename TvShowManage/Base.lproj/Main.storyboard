@@ -103,6 +103,8 @@
                     <tabBarItem key="tabBarItem" title="添加电视剧" image="first" id="D7V-zk-qD9"/>
                     <connections>
                         <outlet property="dataPicker" destination="uoK-iv-RBO" id="KSs-6M-9eN"/>
+                        <outletCollection property="showInformation" destination="8at-cM-L4F" id="44G-gY-fTT"/>
+                        <outletCollection property="showInformation" destination="7Sy-si-aZu" id="IiB-zP-cX1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDJ-Ue-ggM" userLabel="First Responder" sceneMemberID="firstResponder"/>

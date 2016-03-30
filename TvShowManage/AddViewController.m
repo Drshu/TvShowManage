@@ -7,15 +7,26 @@
 //
 
 #import "AddViewController.h"
+#import "AppDelegate.h"
 
 #define kSeason 0
 #define kEpisode 1
+
+
+static NSString* const kShowENtityName = @"Entity";
+static NSString* const kTvShowNameKey = @"showName";
+static NSString* const kTvShowAllDateKey = @"showAllDate";
+static NSString* const kTvShowLastedDateKey = @"showLastedDate";
+static NSString* const kTvShowIntroductionKey = @"showIntroduction";
+
 
 @interface AddViewController ()
 @property (weak, nonatomic) IBOutlet UIPickerView *dataPicker;
 @property(strong,nonatomic) NSArray *seasonNumber;
 @property(strong,nonatomic) NSArray *episodeNumber;
 @property(strong,nonatomic) NSDictionary *seasonEpisode;
+
+@property(strong,nonatomic)IBOutletCollection(UITextField)NSArray *showInformation;
 
 @end
 
@@ -24,8 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    self.seasonNumber = @[@"01",@"02",@"03",@"04",@"05",@"06",@"07",@"08",@"09",@"10",@"11",@"12",@"13",@"14",@"15",@"16"];
-//  self.episodeNumber=@[@"01",@"02",@"03",@"04",@"05",@"06",@"07",@"08",@"09",@"10",@"11",@"12",@"13",@"14",@"15",@"16"];
+//获取时间选择器的熟悉列表，并初始化时间选择器
     NSBundle *bundle = [NSBundle mainBundle];
     NSURL *plistURl = [bundle URLForResource:@"DataList" withExtension:@"plist"];
     
@@ -36,6 +46,25 @@
     self.seasonNumber = sortedSeason;
     NSString *selectedSeason = self.seasonNumber[0];
     self.episodeNumber = self.seasonEpisode[selectedSeason];
+    
+    //创建持久化储存,先确定有没有已经存在数据
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc]
+                               initWithEntityName:kShowENtityName];//将实体传递
+    NSError *error;
+    NSArray *object =[context executeFetchRequest:request error:&error];
+    if(object == nil){
+        NSLog(@"出现错误！");
+    }
+//    for(NSManagedObject *oneObject in object){
+//        NSString *showName =[oneObject valueForKey:kTvShowNameKey];
+//        NSString *showAllDate = [oneObject valueForKey:kTvShowAllDateKey];
+//        NSString *showLastedDate = [oneObject valueForKey:kTvShowLastedDateKey];
+//        NSString *showIntroduction = [oneObject valueForKey:kTvShowIntroductionKey];
+//        
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
