@@ -20,6 +20,7 @@
 		A2C8080C1CAAC2860012353A /* TvShowManage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A2C8080A1CAAC2860012353A /* TvShowManage.xcdatamodeld */; };
 		A2C808451CAAC84A0012353A /* Entity+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C808421CAAC84A0012353A /* Entity+CoreDataProperties.m */; };
 		A2C808461CAAC84A0012353A /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C808441CAAC84A0012353A /* Entity.m */; };
+		A2C8084F1CAB95EF0012353A /* Entity+information.m in Sources */ = {isa = PBXBuildFile; fileRef = A2C8084E1CAB95EF0012353A /* Entity+information.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,8 @@
 		A2C808421CAAC84A0012353A /* Entity+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Entity+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A2C808431CAAC84A0012353A /* Entity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
 		A2C808441CAAC84A0012353A /* Entity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
+		A2C8084D1CAB95EF0012353A /* Entity+information.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Entity+information.h"; sourceTree = "<group>"; };
+		A2C8084E1CAB95EF0012353A /* Entity+information.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Entity+information.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,25 +81,21 @@
 		A2BF79101CAA93D50008711F /* TvShowManage */ = {
 			isa = PBXGroup;
 			children = (
+				A2C808501CABF3850012353A /* Model */,
 				A2BF79141CAA93D50008711F /* AppDelegate.h */,
 				A2BF79151CAA93D50008711F /* AppDelegate.m */,
 				A2BF79171CAA93D50008711F /* FirstViewController.h */,
 				A2BF79181CAA93D60008711F /* FirstViewController.m */,
 				A2BF791A1CAA93D60008711F /* SecondViewController.h */,
 				A2BF791B1CAA93D60008711F /* SecondViewController.m */,
+				A2BF792B1CAA9E190008711F /* AddViewController.h */,
+				A2BF792C1CAA9E190008711F /* AddViewController.m */,
 				A2BF791D1CAA93D60008711F /* Main.storyboard */,
 				A2BF79201CAA93D60008711F /* Assets.xcassets */,
 				A2BF79221CAA93D60008711F /* LaunchScreen.storyboard */,
 				A2BF79251CAA93D60008711F /* Info.plist */,
 				A2BF79111CAA93D50008711F /* Supporting Files */,
-				A2BF792B1CAA9E190008711F /* AddViewController.h */,
-				A2BF792C1CAA9E190008711F /* AddViewController.m */,
 				A2BF792E1CAAA3630008711F /* DataList.plist */,
-				A2C8080A1CAAC2860012353A /* TvShowManage.xcdatamodeld */,
-				A2C808411CAAC84A0012353A /* Entity+CoreDataProperties.h */,
-				A2C808421CAAC84A0012353A /* Entity+CoreDataProperties.m */,
-				A2C808431CAAC84A0012353A /* Entity.h */,
-				A2C808441CAAC84A0012353A /* Entity.m */,
 			);
 			path = TvShowManage;
 			sourceTree = "<group>";
@@ -115,6 +114,20 @@
 				A2C808041CAAC1780012353A /* CoreData.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A2C808501CABF3850012353A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A2C8080A1CAAC2860012353A /* TvShowManage.xcdatamodeld */,
+				A2C808411CAAC84A0012353A /* Entity+CoreDataProperties.h */,
+				A2C808421CAAC84A0012353A /* Entity+CoreDataProperties.m */,
+				A2C808431CAAC84A0012353A /* Entity.h */,
+				A2C808441CAAC84A0012353A /* Entity.m */,
+				A2C8084D1CAB95EF0012353A /* Entity+information.h */,
+				A2C8084E1CAB95EF0012353A /* Entity+information.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +205,7 @@
 				A2C808461CAAC84A0012353A /* Entity.m in Sources */,
 				A2BF792D1CAA9E190008711F /* AddViewController.m in Sources */,
 				A2BF791C1CAA93D60008711F /* SecondViewController.m in Sources */,
+				A2C8084F1CAB95EF0012353A /* Entity+information.m in Sources */,
 				A2BF79161CAA93D50008711F /* AppDelegate.m in Sources */,
 				A2C8080C1CAAC2860012353A /* TvShowManage.xcdatamodeld in Sources */,
 				A2BF79191CAA93D60008711F /* FirstViewController.m in Sources */,

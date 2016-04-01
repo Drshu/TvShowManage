@@ -17,7 +17,19 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="85W-Hp-KkU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="560"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="85W-Hp-KkU" secondAttribute="bottom" constant="40" id="3e4-ht-SuC"/>
+                            <constraint firstItem="85W-Hp-KkU" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="IbP-RG-c6A"/>
+                            <constraint firstAttribute="trailing" secondItem="85W-Hp-KkU" secondAttribute="trailing" id="nbE-0M-EDN"/>
+                            <constraint firstItem="85W-Hp-KkU" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" id="omt-iY-hMY"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="重点关注" image="first" id="acW-dT-cKf"/>
                 </viewController>
@@ -58,11 +70,14 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fn-QL-U16">
                                 <rect key="frame" x="20" y="485" width="560" height="30"/>
                                 <state key="normal" title="添加"/>
+                                <connections>
+                                    <action selector="addButton:" destination="NkM-cc-ZOc" eventType="touchUpInside" id="8XI-bR-Zxm"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8at-cM-L4F">
                                 <rect key="frame" x="91" y="48" width="479" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="yes" returnKeyType="next"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7Sy-si-aZu">
                                 <rect key="frame" x="91" y="117" width="479" height="30"/>
@@ -103,8 +118,8 @@
                     <tabBarItem key="tabBarItem" title="添加电视剧" image="first" id="D7V-zk-qD9"/>
                     <connections>
                         <outlet property="dataPicker" destination="uoK-iv-RBO" id="KSs-6M-9eN"/>
-                        <outletCollection property="showInformation" destination="8at-cM-L4F" id="44G-gY-fTT"/>
-                        <outletCollection property="showInformation" destination="7Sy-si-aZu" id="IiB-zP-cX1"/>
+                        <outlet property="introductionField" destination="7Sy-si-aZu" id="GWy-Zq-x0g"/>
+                        <outlet property="nameField" destination="8at-cM-L4F" id="Dz1-c5-jq3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vDJ-Ue-ggM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -122,7 +137,19 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Uhs-1j-eo5">
+                                <rect key="frame" x="0.0" y="0.0" width="607" height="551"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Uhs-1j-eo5" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="top" id="YOj-h1-bZR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Uhs-1j-eo5" secondAttribute="trailing" constant="-27" id="efs-Ia-ifZ"/>
+                            <constraint firstItem="Uhs-1j-eo5" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leading" id="gyn-67-up6"/>
+                            <constraint firstItem="Uhs-1j-eo5" firstAttribute="bottom" secondItem="Djb-ko-YwX" secondAttribute="top" id="pFt-M0-N7z"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="我的影视库" image="second" id="cPa-gy-q4n"/>
                 </viewController>

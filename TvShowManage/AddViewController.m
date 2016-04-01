@@ -8,6 +8,7 @@
 
 #import "AddViewController.h"
 #import "AppDelegate.h"
+#import "Entity.h"
 
 #define kSeason 0
 #define kEpisode 1
@@ -25,8 +26,12 @@ static NSString* const kTvShowIntroductionKey = @"showIntroduction";
 @property(strong,nonatomic) NSArray *seasonNumber;
 @property(strong,nonatomic) NSArray *episodeNumber;
 @property(strong,nonatomic) NSDictionary *seasonEpisode;
+@property (nonatomic,strong) NSManagedObjectContext* contenxt;
+
 
 @property(strong,nonatomic)IBOutletCollection(UITextField)NSArray *showInformation;
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UITextField *introductionField;
 
 @end
 
@@ -35,7 +40,7 @@ static NSString* const kTvShowIntroductionKey = @"showIntroduction";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//获取时间选择器的熟悉列表，并初始化时间选择器
+//获取时间选择器的属性列表，并初始化时间选择器
     NSBundle *bundle = [NSBundle mainBundle];
     NSURL *plistURl = [bundle URLForResource:@"DataList" withExtension:@"plist"];
     
@@ -49,10 +54,17 @@ static NSString* const kTvShowIntroductionKey = @"showIntroduction";
     
     //创建持久化储存,先确定有没有已经存在数据
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    NSManagedObjectContext *context = [appDelegate managedObjectContext];
-    
+
+     NSManagedObjectContext *context = [appDelegate managedObjectContext];
     NSFetchRequest *request = [[NSFetchRequest alloc]
                                initWithEntityName:kShowENtityName];//将实体传递
+
+    //[[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
+    //request.sortDescriptors = @[[NSSortDescriptor  sortDescriptorWithKey:@"TvShowName" ascending:YES]];
+    //request.predicate = [NSPredicate predicateWithFormat:@"....",...]
+    //这里是一个谓词，可以限定只取出某一些
+    
+    
     NSError *error;
     NSArray *object =[context executeFetchRequest:request error:&error];
     if(object == nil){
@@ -83,6 +95,74 @@ static NSString* const kTvShowIntroductionKey = @"showIntroduction";
 */
 
 
+-(void)setupContenxt{
+    //创建一个数据库
+    //数据库里面有一张表
+    //1/添加上下文,关联数据，模型文件
+    NSManagedObjectContext * contenxt = [[NSManagedObjectContext alloc]initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    
+    //2.关联模型文件
+    //传一个nil会把所有的bundle的模型文件都关联起来
+    NSManagedObjectModel * model = [NSManagedObjectModel mergedModelFromBundles:nil];
+    
+    //3.持久化数据存储
+    NSPersistentStoreCoordinator * store = [[NSPersistentStoreCoordinator alloc]initWithManagedObjectModel:model];
+    
+    //存储数据库的名字
+    NSError * error = nil;
+    
+    //获取docment目录
+    NSString * doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    
+    //数据库保存的路径
+    NSString * sqlite = [doc stringByAppendingPathComponent:@"TvShowManage.sqlite"];
+    
+    [store addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:[NSURL fileURLWithPath:sqlite] options:nil error:&error];
+    
+    contenxt.persistentStoreCoordinator = store;
+    
+    self.contenxt = contenxt;
+    
+}
+
+-(IBAction)addButton:(id)sender{
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    
+    NSManagedObjectContext *context = [appDelegate managedObjectContext];
+
+
+    NSInteger seasonRow = [self.dataPicker selectedRowInComponent:kSeason];
+    NSInteger episodeRow = [self.dataPicker selectedRowInComponent:kEpisode];
+    Entity * tvShow1 =[NSEntityDescription insertNewObjectForEntityForName:@"Entity"
+                                                    inManagedObjectContext:context];
+    NSError * error = nil;
+    
+    NSString *name = self.nameField.text;
+    NSString *introduction = self.introductionField.text;
+    NSString *dateSeason = self.seasonNumber[seasonRow];
+    NSString *dateEposide = self.episodeNumber[episodeRow];
+    NSString *date;
+    date = [dateSeason stringByAppendingString:dateEposide];
+    tvShow1.showName =name;
+    tvShow1.showIntroduction = introduction;
+    tvShow1.showLastedData = date;
+    if (!error) {
+        NSLog(@"保存成功");
+        NSString *message = [[NSString alloc]initWithFormat:@"你的新剧：%@已经成功添加",name];
+        UIAlertController *alert=
+        [UIAlertController alertControllerWithTitle:@"恭喜，添加成功"
+                                            message:message
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"好嘞！"
+                                                         style:UIAlertActionStyleDefault
+                                                       handler:nil];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+        [self.contenxt save:&error];
+    }
+    [appDelegate saveContext];
+}
+
 #pragma -
 #pragma Picker Season 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -97,6 +177,8 @@ static NSString* const kTvShowIntroductionKey = @"showIntroduction";
         return [self.episodeNumber count];
     }
 }
+
+
 
 #pragma mark Picker Delegate Methods
 - (NSString *)pickerView:(UIPickerView *)pickerView
@@ -123,6 +205,10 @@ static NSString* const kTvShowIntroductionKey = @"showIntroduction";
                                animated:YES];
     }
 }
+
+
+
+
 
 
 

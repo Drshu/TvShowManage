@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Xcode 7.0">
     <entity name="Entity" representedClassName="Entity" syncable="YES">
+        <attribute name="favorite" optional="YES" attributeType="Integer 16" minValueString="0" maxValueString="1" defaultValueString="0" syncable="YES"/>
         <attribute name="showAllData" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="showIntroduction" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="showLastedData" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
+        <attribute name="showLastedData" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="showName" optional="YES" transient="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Entity" positionX="-63" positionY="-18" width="128" height="103"/>
+        <element name="Entity" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>
