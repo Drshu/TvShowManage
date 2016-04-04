@@ -10,7 +10,7 @@
 #import <CoreData/CoreData.h>
 
 @interface SecondViewController : UIViewController
-<UITableViewDataSource>
+<UITableViewDataSource,UITableViewDelegate>
 
 
 @end

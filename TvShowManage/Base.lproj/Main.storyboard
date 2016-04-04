@@ -140,9 +140,10 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Uhs-1j-eo5">
                                 <rect key="frame" x="0.0" y="0.0" width="607" height="551"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="8rJ-Kc-sve" id="PIt-Mx-AA0"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="I10-iQ-lD8"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -155,9 +156,6 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="我的影视库" image="second" id="cPa-gy-q4n"/>
-                    <connections>
-                        <outlet property="tableView" destination="Uhs-1j-eo5" id="XDQ-12-7ES"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>

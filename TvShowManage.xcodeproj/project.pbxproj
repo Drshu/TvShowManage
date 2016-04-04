@@ -15,6 +15,7 @@
 		A224451A1CB24A13000E0A24 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = A22445121CB24A13000E0A24 /* FMDatabaseQueue.m */; };
 		A224451B1CB24A13000E0A24 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A22445151CB24A13000E0A24 /* FMResultSet.m */; };
 		A224451C1CB24A13000E0A24 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A22445161CB24A13000E0A24 /* Info.plist */; };
+		A224451F1CB27FE3000E0A24 /* DataFromDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A224451E1CB27FE3000E0A24 /* DataFromDataBase.m */; };
 		A2BF79131CAA93D50008711F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BF79121CAA93D50008711F /* main.m */; };
 		A2BF79161CAA93D50008711F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BF79151CAA93D50008711F /* AppDelegate.m */; };
 		A2BF79191CAA93D60008711F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BF79181CAA93D60008711F /* FirstViewController.m */; };
@@ -46,6 +47,8 @@
 		A22445141CB24A13000E0A24 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
 		A22445151CB24A13000E0A24 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		A22445161CB24A13000E0A24 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A224451D1CB27FE3000E0A24 /* DataFromDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFromDataBase.h; sourceTree = "<group>"; };
+		A224451E1CB27FE3000E0A24 /* DataFromDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFromDataBase.m; sourceTree = "<group>"; };
 		A2BF790E1CAA93D50008711F /* TvShowManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TvShowManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2BF79121CAA93D50008711F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A2BF79141CAA93D50008711F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				A2C808501CABF3850012353A /* Model */,
 				A2BF79141CAA93D50008711F /* AppDelegate.h */,
 				A2BF79151CAA93D50008711F /* AppDelegate.m */,
+				A224451D1CB27FE3000E0A24 /* DataFromDataBase.h */,
+				A224451E1CB27FE3000E0A24 /* DataFromDataBase.m */,
 				A2BF79171CAA93D50008711F /* FirstViewController.h */,
 				A2BF79181CAA93D60008711F /* FirstViewController.m */,
 				A2BF791A1CAA93D60008711F /* SecondViewController.h */,
@@ -253,6 +258,7 @@
 				A2C808461CAAC84A0012353A /* Entity.m in Sources */,
 				A22445191CB24A13000E0A24 /* FMDatabasePool.m in Sources */,
 				A224451B1CB24A13000E0A24 /* FMResultSet.m in Sources */,
+				A224451F1CB27FE3000E0A24 /* DataFromDataBase.m in Sources */,
 				A2BF792D1CAA9E190008711F /* AddViewController.m in Sources */,
 				A2BF791C1CAA93D60008711F /* SecondViewController.m in Sources */,
 				A224451A1CB24A13000E0A24 /* FMDatabaseQueue.m in Sources */,
