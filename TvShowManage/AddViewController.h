@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  AddViewController.h
 //  TvShowManage
 //
 //  Created by shucheng on 16/3/29.
@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <CoreData/CoreData.h>
 
-@interface SecondViewController : UIViewController
-<UITableViewDataSource>
-
+@interface AddViewController : UIViewController
+<UIPickerViewDataSource,UIPickerViewDelegate>
 
 @end
-

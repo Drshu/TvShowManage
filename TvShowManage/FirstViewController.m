@@ -7,16 +7,26 @@
 //
 
 #import "FirstViewController.h"
+#import "Entity.h"
+#import "AppDelegate.h"
 
 @interface FirstViewController ()
+
+
 
 @end
 
 @implementation FirstViewController
 
+@synthesize context;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication]delegate];//这里需要引进自己项目的委托，是让全局managedObjectContext起作用。
+    self.context = delegate.managedObjectContext;
+ 
 }
 
 - (void)didReceiveMemoryWarning {
