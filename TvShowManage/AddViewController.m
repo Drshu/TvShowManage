@@ -9,6 +9,7 @@
 #import "AddViewController.h"
 #import "AppDelegate.h"
 #import "Entity.h"
+#import "FMDB.h"
 
 #define kSeason 0
 #define kEpisode 1
@@ -27,6 +28,8 @@ static NSString* const kTvShowIntroductionKey = @"showIntroduction";
 @property(strong,nonatomic) NSArray *episodeNumber;
 @property(strong,nonatomic) NSDictionary *seasonEpisode;
 @property (nonatomic,strong) NSManagedObjectContext* contenxt;
+@property(nonatomic,strong)FMDatabase *db;
+
 
 
 @property(strong,nonatomic)IBOutletCollection(UITextField)NSArray *showInformation;
@@ -52,8 +55,30 @@ static NSString* const kTvShowIntroductionKey = @"showIntroduction";
     NSString *selectedSeason = self.seasonNumber[0];
     self.episodeNumber = self.seasonEpisode[selectedSeason];
     
-
+    //1.获得数据库文件的路径
+    NSString *doc=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *fileName=[doc stringByAppendingPathComponent:@"tvShow.sqlite"];
+    
+    //2.获得数据库
+    FMDatabase *db=[FMDatabase databaseWithPath:fileName];
+    
+    //3.打开数据库
+    if ([db open]) {
+        //4.创表
+        BOOL result=[db executeUpdate:@"CREATE TABLE IF NOT EXISTS t_show (id integer PRIMARY KEY AUTOINCREMENT, name text NOT NULL, introduction text NOT NULL, lastDate text NOT NULL, allDate text NOT NULL);"];
+        if (result) {
+            NSLog(@"创表成功");
+        }else
+        {
+            NSLog(@"创表失败");
+        }
+    }
+    self.db=db;
 }
+
+    
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -73,10 +98,47 @@ static NSString* const kTvShowIntroductionKey = @"showIntroduction";
 
 
 -(IBAction)addButton:(id)sender{
+    NSInteger seasonRow = [self.dataPicker selectedRowInComponent:kSeason];
+    NSInteger episodeRow = [self.dataPicker selectedRowInComponent:kEpisode];
+
+    
+    NSString *name = [NSString stringWithFormat:@"%@",self.nameField.text];
+    NSString *introduction =[NSString stringWithFormat:@"%@",self.introductionField.text];
+    NSString *seasonNumber = [NSString stringWithFormat:@"%@",self.seasonNumber[seasonRow]];
+    NSString *episodeNumber = [NSString stringWithFormat:@"E%@",self.episodeNumber[episodeRow]];
+    NSString *lastDate;
+    lastDate =[seasonNumber stringByAppendingString:episodeNumber];
+    NSString *allDate = [NSString stringWithFormat:@"S20E20"];
+    [self.db executeUpdate:@"INSERT INTO t_show (name,introduction,lastDate,allDate) VALUES (?,?,?,?)",name,introduction,lastDate,allDate];
+    
+    NSString *message = [[NSString alloc]initWithFormat:@"你的新剧：%@已经成功添加",name];
+    UIAlertController *alert=
+    [UIAlertController alertControllerWithTitle:@"恭喜，添加成功"
+                                        message:message
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"好嘞！"
+                                                     style:UIAlertActionStyleDefault
+                                                   handler:nil];
+    [alert addAction:action];
+    [self presentViewController:alert animated:YES completion:nil];
+    [self query];
     }
 
+-(void)query{
+    // 1.执行查询语句
+    FMResultSet *resultSet = [self.db executeQuery:@"SELECT * FROM t_show"];
+    // 2.遍历结果
+    while ([resultSet next]) {
+        int ID = [resultSet intForColumn:@"id"];
+        NSString *name = [resultSet stringForColumn:@"name"];
+        NSString *introduction = [resultSet stringForColumn:@"introduction"];
+        NSString *lastDate = [resultSet stringForColumn:@"lastDate"];
+        NSLog(@"%d %@ %@ %@", ID, name, introduction,lastDate);
+    }
+
+}
 #pragma -
-#pragma Picker Season 
+#pragma Picker Season
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 2;
