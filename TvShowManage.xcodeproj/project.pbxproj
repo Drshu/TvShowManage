@@ -16,6 +16,8 @@
 		A224451B1CB24A13000E0A24 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = A22445151CB24A13000E0A24 /* FMResultSet.m */; };
 		A224451C1CB24A13000E0A24 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A22445161CB24A13000E0A24 /* Info.plist */; };
 		A224451F1CB27FE3000E0A24 /* DataFromDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = A224451E1CB27FE3000E0A24 /* DataFromDataBase.m */; };
+		A22445221CB29390000E0A24 /* ShowListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A22445211CB29390000E0A24 /* ShowListViewController.m */; };
+		A22445251CB29478000E0A24 /* FavoritesList.m in Sources */ = {isa = PBXBuildFile; fileRef = A22445241CB29478000E0A24 /* FavoritesList.m */; };
 		A2BF79131CAA93D50008711F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BF79121CAA93D50008711F /* main.m */; };
 		A2BF79161CAA93D50008711F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BF79151CAA93D50008711F /* AppDelegate.m */; };
 		A2BF79191CAA93D60008711F /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BF79181CAA93D60008711F /* FirstViewController.m */; };
@@ -49,6 +51,10 @@
 		A22445161CB24A13000E0A24 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A224451D1CB27FE3000E0A24 /* DataFromDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataFromDataBase.h; sourceTree = "<group>"; };
 		A224451E1CB27FE3000E0A24 /* DataFromDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataFromDataBase.m; sourceTree = "<group>"; };
+		A22445201CB29390000E0A24 /* ShowListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowListViewController.h; sourceTree = "<group>"; };
+		A22445211CB29390000E0A24 /* ShowListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowListViewController.m; sourceTree = "<group>"; };
+		A22445231CB29478000E0A24 /* FavoritesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritesList.h; sourceTree = "<group>"; };
+		A22445241CB29478000E0A24 /* FavoritesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritesList.m; sourceTree = "<group>"; };
 		A2BF790E1CAA93D50008711F /* TvShowManage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TvShowManage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2BF79121CAA93D50008711F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A2BF79141CAA93D50008711F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -138,8 +144,12 @@
 				A2BF79181CAA93D60008711F /* FirstViewController.m */,
 				A2BF791A1CAA93D60008711F /* SecondViewController.h */,
 				A2BF791B1CAA93D60008711F /* SecondViewController.m */,
+				A22445201CB29390000E0A24 /* ShowListViewController.h */,
+				A22445211CB29390000E0A24 /* ShowListViewController.m */,
 				A2BF792B1CAA9E190008711F /* AddViewController.h */,
 				A2BF792C1CAA9E190008711F /* AddViewController.m */,
+				A22445231CB29478000E0A24 /* FavoritesList.h */,
+				A22445241CB29478000E0A24 /* FavoritesList.m */,
 				A2BF791D1CAA93D60008711F /* Main.storyboard */,
 				A2BF79201CAA93D60008711F /* Assets.xcassets */,
 				A2BF79221CAA93D60008711F /* LaunchScreen.storyboard */,
@@ -263,6 +273,7 @@
 				A2BF791C1CAA93D60008711F /* SecondViewController.m in Sources */,
 				A224451A1CB24A13000E0A24 /* FMDatabaseQueue.m in Sources */,
 				A22445171CB24A13000E0A24 /* FMDatabase.m in Sources */,
+				A22445251CB29478000E0A24 /* FavoritesList.m in Sources */,
 				A2C8084F1CAB95EF0012353A /* Entity+information.m in Sources */,
 				A2BF79161CAA93D50008711F /* AppDelegate.m in Sources */,
 				A2C8080C1CAAC2860012353A /* TvShowManage.xcdatamodeld in Sources */,
@@ -270,6 +281,7 @@
 				A2BF79191CAA93D60008711F /* FirstViewController.m in Sources */,
 				A2BF79131CAA93D50008711F /* main.m in Sources */,
 				A2C808451CAAC84A0012353A /* Entity+CoreDataProperties.m in Sources */,
+				A22445221CB29390000E0A24 /* ShowListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

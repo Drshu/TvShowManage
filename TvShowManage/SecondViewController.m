@@ -10,6 +10,8 @@
 #import "Entity.h"
 #import "FMDB.h"
 #import "DataFromDataBase.h"
+#import "FavoritesList.h"
+#import "ShowListViewController.h"
 static NSString *SectionsTableIdentifier = @"SectionsTableIdentifier";
 int count=0;
 
@@ -18,9 +20,10 @@ int count=0;
 @property(copy,nonatomic)NSArray *keys;
 @property(nonatomic,strong)FMDatabase *db;
 @property (nonatomic, strong) NSMutableArray *nameArray;
-@property (nonatomic, assign)   id <UITableViewDataSource> dataSource;
-
-@property (nonatomic, assign)   id <UITableViewDelegate>   delegate;
+@property(copy,nonatomic)NSString *familyName;
+@property(strong,nonatomic)FavoritesList *favoriteList;
+@property(strong,nonatomic)NSString *date;
+@property(strong,nonatomic)UITableView *tableView;
 @end
 
 @implementation SecondViewController
@@ -91,6 +94,8 @@ int count=0;
     // Dispose of any resources that can be recreated.
 }
 
+#pragma -
+#pragma UITableView
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
@@ -124,5 +129,18 @@ int count=0;
         return indexPath;//传递即将选中的行对应的索引
     }
 }
+
+#pragma -
+#pragma Info Viewcontroller
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    ShowListViewController *listVC = segue.destinationViewController;
+    NSString *familyName = self.nameArray[indexPath.row];
+    listVC.navigationItem.title = familyName;
+    
+}
+
 
 @end

@@ -101,7 +101,6 @@ static NSString* const kTvShowIntroductionKey = @"showIntroduction";
     NSInteger seasonRow = [self.dataPicker selectedRowInComponent:kSeason];
     NSInteger episodeRow = [self.dataPicker selectedRowInComponent:kEpisode];
 
-    
     NSString *name = [NSString stringWithFormat:@"%@",self.nameField.text];
     NSString *introduction =[NSString stringWithFormat:@"%@",self.introductionField.text];
     NSString *seasonNumber = [NSString stringWithFormat:@"%@",self.seasonNumber[seasonRow]];
